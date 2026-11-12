@@ -1,0 +1,78 @@
+# Builds a vX.Y.Z tag and publishes it as a GitHub Release of the repository
+# it runs in: the zips, the registry manifest, SHA256SUMS and its GPG
+# signature. The Terraform Registry reads this Release, and only accepts it
+# when that key is registered for the namespace.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_call:
+    inputs:
+      runner:
+        description: Runner label for the release job.
+        type: string
+        default: ubuntu-latest
+      goproxy:
+        description: GOPROXY for the build; empty uses Go's default.
+        type: string
+        default: ''
+
+permissions: {}
+
+jobs:
+  release:
+    # Holds GPG_PRIVATE_KEY and PASSPHRASE and only admits v* tags, so a
+    # workflow pushed on a branch cannot read the signing key.
+    environment: terraform-registry
+    runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
+    timeout-minutes: 30
+    permissions:
+      contents: write  # create the GitHub Release and upload its assets
+    env:
+      GOPROXY: ${{ inputs.goproxy }}
+    steps:
+      # Full history and tags: goreleaser derives the version from the tag.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      # A keyring of its own under RUNNER_TEMP, which the runner empties at the
+      # start and end of every job, so the key never stays on a reused runner.
+      - name: Import signing key
+        id: gpg
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: |
+          export GNUPGHOME="$RUNNER_TEMP/gnupg"
+          echo "GNUPGHOME=$GNUPGHOME" >> "$GITHUB_ENV"
+          FPR=$(make --no-print-directory gpg-import)
+          echo "fingerprint=$FPR" >> "$GITHUB_OUTPUT"
+
+      - name: Extract release notes
+        run: make release-notes RELEASE_VERSION="${GITHUB_REF_NAME#v}" RELEASE_NOTES="$RUNNER_TEMP/release-notes.md"
+
+      - name: Build and publish
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GPG_FINGERPRINT: ${{ steps.gpg.outputs.fingerprint }}
+          PASSPHRASE: ${{ secrets.PASSPHRASE }}
+        run: make goreleaser-release RELEASE_NOTES="$RUNNER_TEMP/release-notes.md"
+
+      - name: Stop gpg-agent
+        if: always()
+        run: gpgconf --kill gpg-agent
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist-release
+          path: dist/
+          retention-days: 1

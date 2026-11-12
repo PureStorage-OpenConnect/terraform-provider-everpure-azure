@@ -1,0 +1,15 @@
+NOTICE
+
+This distribution includes source code generated from the Azure REST API
+specifications (https://github.com/Azure/azure-rest-api-specs), licensed
+under the MIT License, Copyright (c) Microsoft Corporation.
+
+This distribution also includes the third-party Go modules listed below,
+each under its own license. The full text of each license is reproduced in
+the licenses/ directory distributed alongside this file (in the release
+archive and the source repository), one subdirectory per module. Modules
+that are only used for testing or for building/linting this project (and
+are therefore never compiled into the distributed provider binary) are not
+listed, since they are not distributed.
+
+Third-party Go modules:

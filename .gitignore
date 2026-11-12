@@ -1,0 +1,16 @@
+# Build output
+/terraform-provider-everpure-azure
+/dist/
+
+# Cached Terraform CLI binary for pinned-version test runs (make terraform-bin)
+/.terraform-bin/
+
+# Terraform run artifacts (examples, local testing)
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform.lock.hcl
+
+# Editor/OS noise
+.DS_Store

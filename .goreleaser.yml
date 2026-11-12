@@ -1,0 +1,70 @@
+# goreleaser configuration — terraform registry zip layout.
+version: 2
+
+project_name: terraform-provider-everpure-azure
+
+builds:
+  - id: release
+    env:
+      - CGO_ENABLED=0
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    flags:
+      - -trimpath
+    ldflags:
+      - '-s -w -X main.version={{ .Version }}'
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    ignore:
+      - goos: windows
+        goarch: arm64
+    binary: '{{ .ProjectName }}_v{{ .Version }}'
+
+archives:
+  - ids: [release]
+    formats: [zip]
+    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    # License attribution must travel with every artifact we distribute, not
+    # only with the source tree, so each zip carries LICENSE, NOTICE.txt and
+    # the full licenses/ tree. The registry is a union across all release
+    # platforms, so every zip gets the same complete set — including entries
+    # that only apply to another platform's binary. That is deliberate: one
+    # registry, byte-identical in every artifact, rather than per-platform
+    # subsets that could drift.
+    files:
+      - LICENSE
+      - NOTICE.txt
+      - licenses/**/*
+
+# The registry reads the provider's protocol versions from the manifest, and
+# only trusts files listed in the signed checksum file, so the manifest is both
+# a release asset and a checksum entry.
+checksum:
+  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+  algorithm: sha256
+  extra_files:
+    - glob: terraform-registry-manifest.json
+      name_template: '{{ .ProjectName }}_{{ .Version }}_manifest.json'
+
+# The registry rejects a release whose checksum file is not signed by a key
+# registered in its namespace. The key's passphrase comes from PASSPHRASE on
+# stdin, so no gpg-agent has to hold it.
+signs:
+  - artifacts: checksum
+    stdin: "{{ .Env.PASSPHRASE }}"
+    args:
+      - "--batch"
+      - "--pinentry-mode"
+      - "loopback"
+      - "--passphrase-fd"
+      - "0"
+      - "--local-user"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
+
+release:
+  extra_files:
+    - glob: terraform-registry-manifest.json
+      name_template: '{{ .ProjectName }}_{{ .Version }}_manifest.json'

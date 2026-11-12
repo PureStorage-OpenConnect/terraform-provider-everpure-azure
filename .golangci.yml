@@ -1,0 +1,109 @@
+version: "2"
+run:
+  tests: true
+linters:
+  default: none 
+  enable:
+    # Linters with autofix capabilities only
+    - canonicalheader
+    - copyloopvar
+    - dupword
+    - durationcheck
+    - errcheck
+    - errorlint
+    - exptostd
+    - fatcontext
+    - gocritic
+    - godot
+    - gosec
+    - goheader
+    - govet
+    - iface
+    - importas
+    - ineffassign
+    - intrange
+    - mirror
+    - misspell
+    - nakedret
+    - nilerr
+    - nolintlint
+    - perfsprint
+    - protogetter
+    - revive
+    - sloglint
+    - staticcheck
+    - tagalign
+    - testifylint
+    - unconvert
+    - unused
+    - usestdlibvars
+    - usetesting
+    - wastedassign
+    - whitespace
+  settings:
+    errcheck:
+      check-type-assertions: true
+    goheader:
+      template: 'SPDX-License-Identifier: Apache-2.0'
+    gocritic:
+      settings:
+        captLocal:
+          paramsOnly: false
+        underef:
+          skipRecvDeref: false
+    nakedret:
+      max-func-lines: 10
+    nolintlint:
+      require-explanation: true
+      require-specific: true
+    revive:
+      confidence: 0.5
+      rules:
+        - name: error-naming
+          severity: error
+          disabled: false
+        - name: error-return
+          severity: warning
+          disabled: false
+        - name: error-strings
+          severity: warning
+          disabled: false
+        - name: errorf
+          severity: warning
+          disabled: false
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - staticcheck
+        text: should not use underscores in package names
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofumpt
+    - goimports
+  settings:
+    gci:
+      sections:
+        - standard
+        - default
+        - localmodule
+    goimports:
+      local-prefixes:
+        - github.com/PureStorage-OpenConnect/terraform-provider-everpure-azure
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+

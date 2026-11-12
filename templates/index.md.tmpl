@@ -1,0 +1,94 @@
+---
+page_title: "{{ .RenderedProviderName }} Provider"
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+
+# {{ .RenderedProviderName }} Provider
+
+Manage Everpure resources on Azure — enterprise block storage delivered as an
+Azure native service — through the `PureStorage.Block` Azure Resource Manager
+API.
+
+Resources managed by this provider are ordinary ARM resources, so their IDs can
+be passed to and from `azurerm` resources such as management locks and role
+assignments.
+
+## Requirements
+
+* Terraform 1.0 or later for resources and data sources. Some features need a
+  newer Terraform:
+
+  | Feature | Terraform |
+  |---|---|
+  | Resources and data sources | 1.0 |
+  | Ephemeral resource `everpure_azure_platform_console_activation_credentials` | 1.10 |
+  | Passing its password to a write-only attribute | 1.11 |
+  | Import by resource identity (`import` block with `identity`) | 1.12 |
+  | List resources (`terraform query`) and actions | 1.14 |
+  | `caller` in an `action_trigger` | 1.16 |
+
+* An Azure subscription onboarded to Everpure, with a **Reservation** already
+  purchased in the region you want to deploy in. A storage pool cannot be
+  created without one.
+* A subnet delegated to `PureStorage.Block/storagePools` for the pool to be
+  injected into.
+
+## Provider configuration
+
+Declare the provider under the local name `everpure`:
+
+```terraform
+terraform {
+  required_providers {
+    everpure = {
+      source = "PureStorage-OpenConnect/everpure-azure"
+    }
+  }
+}
+```
+
+The local name must be `everpure`, because resource type names begin with
+`everpure_`. The "Use provider" snippet on the registry page shows a different
+local name; change it to `everpure`.
+
+## Example Usage
+
+{{ tffile "examples/getting_started/main.tf" }}
+
+## Authentication
+
+The provider block takes one optional argument, `subscription_id` — the
+subscription resources are managed in. If unset, it falls back to the
+`ARM_SUBSCRIPTION_ID` then `AZURE_SUBSCRIPTION_ID` environment variables; one
+of the three must resolve to a value.
+
+Credentials are resolved the same way `azurerm` and `azapi` resolve them: a
+service principal (secret, certificate or OpenID Connect), managed identity,
+or the Azure CLI, which is what a provider block with nothing configured
+uses. See the
+[Authentication guide](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/authentication)
+for every method, its attributes and environment variables, and worked
+examples for CI, GitHub Actions, Azure Pipelines and AKS.
+
+## Timing
+
+Storage pool creation is a long-running operation and can take up to 90
+minutes. `terraform apply` blocks until Azure reports the operation complete;
+set CI timeouts accordingly. Cancelling an in-flight apply does not cancel the
+Azure operation — the pool is still created, but is no longer tracked in state.
+
+## Deleting resources
+
+Delete behaviour differs per resource type, and some deletes fail by design
+while a resource still holds data. See
+[Deletion policies](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).
+
+## Getting support
+
+Every error from this provider includes an `x-ms-correlation-request-id`
+value — one ID shared by every API call the provider made during that
+`terraform` run. Include it when filing a support case; it's what support
+uses to locate the matching server-side request logs.
+
+{{ .SchemaMarkdown | trimspace }}
