@@ -4,14 +4,14 @@ page_title: "everpure_azure_volume_group Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Looks up an existing Volume Group by name and its Storage Pool.
-  To create and manage a volume group, use the everpure_azure_volume_group resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group.
+  To create and manage a volume group, use the everpure_azure_volume_group resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group.
 ---
 
 # everpure_azure_volume_group (Data Source)
 
 Looks up an existing Volume Group by name and its Storage Pool.
 
-To create and manage a volume group, use the [`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group).
+To create and manage a volume group, use the [`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group).
 
 ## Example Usage
 

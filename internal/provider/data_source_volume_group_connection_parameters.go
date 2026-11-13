@@ -57,7 +57,7 @@ func (d *VolumeGroupConnectionParametersDataSource) Schema(ctx context.Context, 
 			"To connect an Azure virtual machine to one or more Volume Groups automatically, instead of reading " +
 			"these parameters and configuring the connection yourself, use the " +
 			"[`everpure_azure_virtual_machine_connection` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_virtual_machine_connection).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/virtual_machine_connection).",
 		Attributes: map[string]schema.Attribute{
 			"volume_group_id": schema.StringAttribute{
 				Required:   true,

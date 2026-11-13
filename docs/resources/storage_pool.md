@@ -6,7 +6,7 @@ description: |-
   Manages a Storage Pool — a block storage instance injected into a virtual network in your subscription.
   Creation is asynchronous and can take up to 90 minutes. A Reservation must already exist in the same subscription and region.
   ~> Deleting a storage pool is permanent. There is no soft delete. The API refuses to delete a pool that still holds volume groups, volumes or other resources, including soft-deleted ones awaiting eradication. See Deletion policies https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies.
-  To read a storage pool managed elsewhere without taking ownership of it, use the everpure_azure_storage_pool data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_storage_pool.
+  To read a storage pool managed elsewhere without taking ownership of it, use the everpure_azure_storage_pool data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/storage_pool.
 ---
 
 # everpure_azure_storage_pool (Resource)
@@ -17,7 +17,7 @@ Creation is asynchronous and can take up to 90 minutes. A Reservation must alrea
 
 ~> **Deleting a storage pool is permanent.** There is no soft delete. The API refuses to delete a pool that still holds volume groups, volumes or other resources, including soft-deleted ones awaiting eradication. See [Deletion policies](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).
 
-To read a storage pool managed elsewhere without taking ownership of it, use the [`everpure_azure_storage_pool` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_storage_pool).
+To read a storage pool managed elsewhere without taking ownership of it, use the [`everpure_azure_storage_pool` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/storage_pool).
 
 ## Example Usage
 
@@ -142,7 +142,7 @@ output "storage_pool_console_management_ip" {
 - `location` (String) Azure region the pool is created in, using the canonical short name, e.g. `eastus2`. Must match the region of the Reservation. Changing this forces a new pool to be created.
 - `name` (String) Name of the storage pool. The name must be 1-127 characters long and contain only letters, numbers, hyphens and underscores. Changing this forces a new pool to be created.
 - `provisioned_bandwidth_in_mbps` (Number) Bandwidth provisioned for the pool, in megabytes per second (MB/s). Must be at least 800. Can be changed in place, without replacing the pool.
-- `reservation_id` (String) Full Azure Resource Manager ID of the Reservation that funds this pool, e.g. the `id` of an [`everpure_azure_reservation`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_reservation) resource. The Reservation must already exist in the same subscription and region. Changing this forces a new pool to be created.
+- `reservation_id` (String) Full Azure Resource Manager ID of the Reservation that funds this pool, e.g. the `id` of an [`everpure_azure_reservation`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/reservation) resource. The Reservation must already exist in the same subscription and region. Changing this forces a new pool to be created.
 - `resource_group_name` (String) Name of the resource group the pool lives in. Changing this forces a new pool to be created.
 - `zone` (String) Availability zone within the region, e.g. `"1"`. Set to `""` for a region with no availability zones. Changing this forces a new pool to be created, destroying all data on the existing pool.
 

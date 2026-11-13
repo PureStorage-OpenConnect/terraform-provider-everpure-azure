@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.1
+
+NOTES:
+
+* Documentation pages on the Terraform Registry no longer repeat `azure_` in their URLs.
+
 ## v1.0.0
 
 FEATURES:

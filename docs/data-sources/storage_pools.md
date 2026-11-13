@@ -4,14 +4,14 @@ page_title: "everpure_azure_storage_pools Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Lists Storage Pools in a resource group, or across the provider's whole subscription_id when resource_group_name is omitted.
-  To look up a single, already-known pool, use the everpure_azure_storage_pool data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_storage_pool instead.
+  To look up a single, already-known pool, use the everpure_azure_storage_pool data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/storage_pool instead.
 ---
 
 # everpure_azure_storage_pools (Data Source)
 
 Lists Storage Pools in a resource group, or across the provider's whole `subscription_id` when `resource_group_name` is omitted.
 
-To look up a single, already-known pool, use the [`everpure_azure_storage_pool` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_storage_pool) instead.
+To look up a single, already-known pool, use the [`everpure_azure_storage_pool` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/storage_pool) instead.
 
 ## Example Usage
 

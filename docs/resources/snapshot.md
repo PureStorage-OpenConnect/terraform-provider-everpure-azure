@@ -6,7 +6,7 @@ description: |-
   Manages a manual Volume Group Snapshot: a point-in-time snapshot of every volume in a Volume Group.
   A snapshot is immutable once created, and snapshots taken by this resource are never expired by the volume group's snapshot schedule: each one stays until it is destroyed.
   ~> Destroying the parent volume group soft-deletes this snapshot with it. The backend destroys every snapshot in a volume group as part of destroying the group itself, and eradicating the group eradicates its snapshots. See Deletion policies https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies.
-  To read a snapshot managed elsewhere, including one taken by the volume group's snapshot schedule, use the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot. A snapshot taken by the schedule cannot be managed by this resource.
+  To read a snapshot managed elsewhere, including one taken by the volume group's snapshot schedule, use the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot. A snapshot taken by the schedule cannot be managed by this resource.
 ---
 
 # everpure_azure_snapshot (Resource)
@@ -17,7 +17,7 @@ A snapshot is immutable once created, and snapshots taken by this resource are n
 
 ~> **Destroying the parent volume group soft-deletes this snapshot with it.** The backend destroys every snapshot in a volume group as part of destroying the group itself, and eradicating the group eradicates its snapshots. See [Deletion policies](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).
 
-To read a snapshot managed elsewhere, including one taken by the volume group's snapshot schedule, use the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot). A snapshot taken by the schedule cannot be managed by this resource.
+To read a snapshot managed elsewhere, including one taken by the volume group's snapshot schedule, use the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot). A snapshot taken by the schedule cannot be managed by this resource.
 
 ## Example Usage
 

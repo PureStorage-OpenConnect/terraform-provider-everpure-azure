@@ -91,7 +91,7 @@ func (d *SnapshotsDataSource) Schema(ctx context.Context, _ datasource.SchemaReq
 			"The elements do not include `volume_snapshots`, the snapshot of each member volume: the API does " +
 			"not return them when listing. To get them for one snapshot, look it up by name with the " +
 			"[`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot).",
 		Attributes: map[string]schema.Attribute{
 			"volume_group_id": schema.StringAttribute{
 				Required:   true,

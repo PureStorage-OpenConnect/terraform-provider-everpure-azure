@@ -4,14 +4,14 @@ page_title: "everpure_azure_volume_groups Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Lists the Volume Groups on a Storage Pool.
-  To look up a single, already-known volume group, use the everpure_azure_volume_group data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group instead.
+  To look up a single, already-known volume group, use the everpure_azure_volume_group data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group instead.
 ---
 
 # everpure_azure_volume_groups (Data Source)
 
 Lists the Volume Groups on a Storage Pool.
 
-To look up a single, already-known volume group, use the [`everpure_azure_volume_group` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group) instead.
+To look up a single, already-known volume group, use the [`everpure_azure_volume_group` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group) instead.
 
 ## Example Usage
 

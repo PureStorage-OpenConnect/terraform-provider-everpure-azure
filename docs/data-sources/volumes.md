@@ -4,14 +4,14 @@ page_title: "everpure_azure_volumes Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Lists the Volumes in a Volume Group. Soft-deleted (destroyed, not yet eradicated) volumes are excluded by default; set include_destroyed = true to include them.
-  To look up a single, already-known volume, use the everpure_azure_volume data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume instead.
+  To look up a single, already-known volume, use the everpure_azure_volume data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume instead.
 ---
 
 # everpure_azure_volumes (Data Source)
 
 Lists the Volumes in a Volume Group. Soft-deleted (destroyed, not yet eradicated) volumes are excluded by default; set `include_destroyed = true` to include them.
 
-To look up a single, already-known volume, use the [`everpure_azure_volume` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume) instead.
+To look up a single, already-known volume, use the [`everpure_azure_volume` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume) instead.
 
 ## Example Usage
 

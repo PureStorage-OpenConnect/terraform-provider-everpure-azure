@@ -104,7 +104,7 @@ func (r *VolumeResource) Schema(ctx context.Context, _ resource.SchemaRequest, r
 			"PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).\n\n" +
 			"To read a volume managed elsewhere without taking ownership of it, use the " +
 			"[`everpure_azure_volume` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume).",
 		Attributes: map[string]schema.Attribute{
 			"id": schema.StringAttribute{
 				Computed:      true,

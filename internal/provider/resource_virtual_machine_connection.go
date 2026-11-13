@@ -87,7 +87,7 @@ func (r *VirtualMachineConnectionResource) Schema(ctx context.Context, _ resourc
 			"configuration management), don't use this resource: read the Volume Group's portal IPs, ports and " +
 			"IQN from the [`everpure_azure_volume_group_connection_parameters` data source](https://registry." +
 			"terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/" +
-			"azure_volume_group_connection_parameters).\n\n" +
+			"volume_group_connection_parameters).\n\n" +
 			"~> **Destroying this resource logs every iSCSI session out before removing the extension**, but " +
 			"leaves any OS-level configuration behind (installed packages, `multipath.conf`, udev rules).\n\n" +
 			"Required Azure role assignments: `Microsoft.Compute/virtualMachines/read`, " +

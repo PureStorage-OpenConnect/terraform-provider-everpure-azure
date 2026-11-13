@@ -4,14 +4,14 @@ page_title: "everpure_azure_reservation Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Looks up an existing Reservation by name and resource group. The contact details the reservation was created with are personal data and are not returned.
-  To create and manage a reservation, use the everpure_azure_reservation resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_reservation.
+  To create and manage a reservation, use the everpure_azure_reservation resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/reservation.
 ---
 
 # everpure_azure_reservation (Data Source)
 
 Looks up an existing Reservation by name and resource group. The contact details the reservation was created with are personal data and are not returned.
 
-To create and manage a reservation, use the [`everpure_azure_reservation` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_reservation).
+To create and manage a reservation, use the [`everpure_azure_reservation` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/reservation).
 
 ## Example Usage
 

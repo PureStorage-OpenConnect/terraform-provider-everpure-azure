@@ -100,7 +100,7 @@ virtual_machine_id  = "/subscriptions/00000000-0000-0000-0000-000000000000/resou
 `terraform apply` waits until it is done.
 
 See
-[`everpure_azure_storage_pool`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_storage_pool)
+[`everpure_azure_storage_pool`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/storage_pool)
 for the other options, such as tags and platform console access.
 
 ## Step 3: Create a volume group and a volume
@@ -111,9 +111,9 @@ The volume can be grown later by raising `provisioned_size_in_gib`; it
 cannot be shrunk.
 
 See
-[`everpure_azure_volume_group`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group)
+[`everpure_azure_volume_group`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group)
 for performance limits and snapshot schedules, and
-[`everpure_azure_volume`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume)
+[`everpure_azure_volume`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume)
 for cloning and restoring volumes.
 
 ## Step 4: Connect the virtual machine
@@ -137,13 +137,13 @@ Windows needs a reboot to finish; without it, the VM has to be rebooted by
 hand.
 
 See
-[`everpure_azure_virtual_machine_connection`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_virtual_machine_connection)
+[`everpure_azure_virtual_machine_connection`](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/virtual_machine_connection)
 for session counts, initiator names and Windows-specific settings.
 
 -> Configuring iSCSI yourself instead (your own initiator setup, cloud-init,
 configuration management)? Skip this step and read the volume group's portal
 IPs, ports and IQN from the
-[`everpure_azure_volume_group_connection_parameters` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group_connection_parameters)
+[`everpure_azure_volume_group_connection_parameters` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group_connection_parameters)
 instead.
 
 ## Step 5: Deploy

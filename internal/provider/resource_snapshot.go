@@ -88,7 +88,7 @@ func (r *SnapshotResource) Schema(ctx context.Context, _ resource.SchemaRequest,
 			"To read a snapshot managed elsewhere, including one taken by the volume group's snapshot " +
 			"schedule, use the " +
 			"[`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot). A snapshot " +
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot). A snapshot " +
 			"taken by the schedule cannot be managed by this resource.",
 		Attributes: map[string]schema.Attribute{
 			"id": schema.StringAttribute{

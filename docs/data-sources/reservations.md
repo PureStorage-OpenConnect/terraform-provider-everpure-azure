@@ -4,14 +4,14 @@ page_title: "everpure_azure_reservations Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Lists Reservations in a resource group, or across the provider's whole subscription_id when resource_group_name is omitted. The contact details a reservation was created with are personal data and are not returned.
-  To look up a single, already-known reservation, use the everpure_azure_reservation data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_reservation instead.
+  To look up a single, already-known reservation, use the everpure_azure_reservation data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/reservation instead.
 ---
 
 # everpure_azure_reservations (Data Source)
 
 Lists Reservations in a resource group, or across the provider's whole `subscription_id` when `resource_group_name` is omitted. The contact details a reservation was created with are personal data and are not returned.
 
-To look up a single, already-known reservation, use the [`everpure_azure_reservation` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_reservation) instead.
+To look up a single, already-known reservation, use the [`everpure_azure_reservation` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/reservation) instead.
 
 ## Example Usage
 

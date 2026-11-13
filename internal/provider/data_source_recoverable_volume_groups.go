@@ -102,11 +102,11 @@ func (d *RecoverableVolumeGroupsDataSource) Schema(ctx context.Context, _ dataso
 		MarkdownDescription: "Lists the soft-deleted (destroyed, not yet eradicated) Volume Groups on a " +
 			"Storage Pool. A volume group appears here instead of in the " +
 			"[`everpure_azure_volume_groups` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_groups) once it has " +
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_groups) once it has " +
 			"been soft-deleted; several entries can share the same `soft_deletion.previous_name` when a " +
 			"volume group has been recreated and deleted again under the same name.\n\n" +
 			"To recover one, create an [`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group) with " +
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group) with " +
 			"`source_type = \"recoverableVolumeGroup\"` and `source_recoverable_volume_group_id` set to its `id`.",
 		Attributes: map[string]schema.Attribute{
 			"storage_pool_id": schema.StringAttribute{

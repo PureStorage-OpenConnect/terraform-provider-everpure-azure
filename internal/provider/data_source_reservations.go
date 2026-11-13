@@ -67,7 +67,7 @@ func (d *ReservationsDataSource) Schema(ctx context.Context, _ datasource.Schema
 			"was created with are personal data and are not returned.\n\n" +
 			"To look up a single, already-known reservation, use the " +
 			"[`everpure_azure_reservation` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_reservation) instead.",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/reservation) instead.",
 		Attributes: map[string]schema.Attribute{
 			"resource_group_name": schema.StringAttribute{
 				Optional:            true,

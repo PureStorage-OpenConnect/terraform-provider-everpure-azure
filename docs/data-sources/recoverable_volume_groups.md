@@ -3,15 +3,15 @@
 page_title: "everpure_azure_recoverable_volume_groups Data Source - Everpure Azure"
 subcategory: ""
 description: |-
-  Lists the soft-deleted (destroyed, not yet eradicated) Volume Groups on a Storage Pool. A volume group appears here instead of in the everpure_azure_volume_groups data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_groups once it has been soft-deleted; several entries can share the same soft_deletion.previous_name when a volume group has been recreated and deleted again under the same name.
-  To recover one, create an everpure_azure_volume_group resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group with source_type = "recoverableVolumeGroup" and source_recoverable_volume_group_id set to its id.
+  Lists the soft-deleted (destroyed, not yet eradicated) Volume Groups on a Storage Pool. A volume group appears here instead of in the everpure_azure_volume_groups data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_groups once it has been soft-deleted; several entries can share the same soft_deletion.previous_name when a volume group has been recreated and deleted again under the same name.
+  To recover one, create an everpure_azure_volume_group resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group with source_type = "recoverableVolumeGroup" and source_recoverable_volume_group_id set to its id.
 ---
 
 # everpure_azure_recoverable_volume_groups (Data Source)
 
-Lists the soft-deleted (destroyed, not yet eradicated) Volume Groups on a Storage Pool. A volume group appears here instead of in the [`everpure_azure_volume_groups` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_groups) once it has been soft-deleted; several entries can share the same `soft_deletion.previous_name` when a volume group has been recreated and deleted again under the same name.
+Lists the soft-deleted (destroyed, not yet eradicated) Volume Groups on a Storage Pool. A volume group appears here instead of in the [`everpure_azure_volume_groups` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_groups) once it has been soft-deleted; several entries can share the same `soft_deletion.previous_name` when a volume group has been recreated and deleted again under the same name.
 
-To recover one, create an [`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group) with `source_type = "recoverableVolumeGroup"` and `source_recoverable_volume_group_id` set to its `id`.
+To recover one, create an [`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group) with `source_type = "recoverableVolumeGroup"` and `source_recoverable_volume_group_id` set to its `id`.
 
 ## Example Usage
 

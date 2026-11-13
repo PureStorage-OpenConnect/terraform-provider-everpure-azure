@@ -4,14 +4,14 @@ page_title: "everpure_azure_storage_pool Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Looks up an existing Storage Pool by name and resource group.
-  To create and manage a storage pool, use the everpure_azure_storage_pool resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_storage_pool.
+  To create and manage a storage pool, use the everpure_azure_storage_pool resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/storage_pool.
 ---
 
 # everpure_azure_storage_pool (Data Source)
 
 Looks up an existing Storage Pool by name and resource group.
 
-To create and manage a storage pool, use the [`everpure_azure_storage_pool` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_storage_pool).
+To create and manage a storage pool, use the [`everpure_azure_storage_pool` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/storage_pool).
 
 ## Example Usage
 

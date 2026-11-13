@@ -7,7 +7,7 @@ description: |-
   List resources require Terraform 1.14 or later, and importing the results by identity requires 1.12 or later. Results are sorted newest first, by created_at.
   terraform query -generate-config-out=<file> writes an import block and a resource block for each result. include_resource = true additionally shows each result's attributes in the query output.
   A list block returns at most 100 results by default and gives no warning when it stops there. Set the block's limit argument to raise the cap.
-  volume_snapshots is null in list results. To see it, import the snapshot or read it with the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot.
+  volume_snapshots is null in list results. To see it, import the snapshot or read it with the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot.
 ---
 
 # everpure_azure_snapshot (List Resource)
@@ -20,7 +20,7 @@ List resources require Terraform 1.14 or later, and importing the results by ide
 
 A `list` block returns at most 100 results by default and gives no warning when it stops there. Set the block's `limit` argument to raise the cap.
 
-`volume_snapshots` is null in list results. To see it, import the snapshot or read it with the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot).
+`volume_snapshots` is null in list results. To see it, import the snapshot or read it with the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot).
 
 ## Example Usage
 

@@ -124,7 +124,7 @@ func (d *SnapshotDataSource) Schema(ctx context.Context, _ datasource.SchemaRequ
 			"includes snapshots taken by the volume group's snapshot schedule.\n\n" +
 			"To create and manage a manual snapshot, use the " +
 			"[`everpure_azure_snapshot` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_snapshot).\n\n" +
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/snapshot).\n\n" +
 			"Soft-deleted snapshots can't be looked up with this data source.",
 		Attributes: attrs,
 		Blocks: map[string]schema.Block{

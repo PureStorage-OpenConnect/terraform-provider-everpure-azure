@@ -68,7 +68,7 @@ func (d *VolumeGroupsDataSource) Schema(ctx context.Context, _ datasource.Schema
 		MarkdownDescription: "Lists the Volume Groups on a Storage Pool.\n\n" +
 			"To look up a single, already-known volume group, use the " +
 			"[`everpure_azure_volume_group` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group) instead.",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group) instead.",
 		Attributes: map[string]schema.Attribute{
 			"storage_pool_id": schema.StringAttribute{
 				Required:   true,

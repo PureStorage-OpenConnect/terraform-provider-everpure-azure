@@ -4,14 +4,14 @@ page_title: "everpure_azure_volume_group_connection_parameters Data Source - Eve
 subcategory: ""
 description: |-
   Looks up the iSCSI connection parameters (portal IPs, ports and target IQN) of an existing Volume Group.
-  To connect an Azure virtual machine to one or more Volume Groups automatically, instead of reading these parameters and configuring the connection yourself, use the everpure_azure_virtual_machine_connection resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_virtual_machine_connection.
+  To connect an Azure virtual machine to one or more Volume Groups automatically, instead of reading these parameters and configuring the connection yourself, use the everpure_azure_virtual_machine_connection resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/virtual_machine_connection.
 ---
 
 # everpure_azure_volume_group_connection_parameters (Data Source)
 
 Looks up the iSCSI connection parameters (portal IPs, ports and target IQN) of an existing Volume Group.
 
-To connect an Azure virtual machine to one or more Volume Groups automatically, instead of reading these parameters and configuring the connection yourself, use the [`everpure_azure_virtual_machine_connection` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_virtual_machine_connection).
+To connect an Azure virtual machine to one or more Volume Groups automatically, instead of reading these parameters and configuring the connection yourself, use the [`everpure_azure_virtual_machine_connection` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/virtual_machine_connection).
 
 ## Example Usage
 

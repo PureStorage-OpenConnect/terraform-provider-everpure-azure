@@ -177,7 +177,7 @@ func (d *StoragePoolDataSource) Schema(ctx context.Context, _ datasource.SchemaR
 		MarkdownDescription: "Looks up an existing Storage Pool by name and resource group.\n\n" +
 			"To create and manage a storage pool, use the " +
 			"[`everpure_azure_storage_pool` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_storage_pool).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/storage_pool).",
 		Attributes: attrs,
 		Blocks: map[string]schema.Block{
 			"timeouts": dataSourceTimeoutsBlock(ctx, "the pool", defaultStoragePoolReadTimeout),

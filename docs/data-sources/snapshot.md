@@ -4,7 +4,7 @@ page_title: "everpure_azure_snapshot Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Looks up an existing Volume Group Snapshot by name and its Volume Group. This includes snapshots taken by the volume group's snapshot schedule.
-  To create and manage a manual snapshot, use the everpure_azure_snapshot resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_snapshot.
+  To create and manage a manual snapshot, use the everpure_azure_snapshot resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/snapshot.
   Soft-deleted snapshots can't be looked up with this data source.
 ---
 
@@ -12,7 +12,7 @@ description: |-
 
 Looks up an existing Volume Group Snapshot by name and its Volume Group. This includes snapshots taken by the volume group's snapshot schedule.
 
-To create and manage a manual snapshot, use the [`everpure_azure_snapshot` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_snapshot).
+To create and manage a manual snapshot, use the [`everpure_azure_snapshot` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/snapshot).
 
 Soft-deleted snapshots can't be looked up with this data source.
 

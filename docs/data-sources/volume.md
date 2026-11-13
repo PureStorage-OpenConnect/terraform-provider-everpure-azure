@@ -4,7 +4,7 @@ page_title: "everpure_azure_volume Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Looks up an existing Volume by name and its Volume Group.
-  To create and manage a volume, use the everpure_azure_volume resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume.
+  To create and manage a volume, use the everpure_azure_volume resource https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume.
   Soft-deleted volumes can't be looked up with this data source.
 ---
 
@@ -12,7 +12,7 @@ description: |-
 
 Looks up an existing Volume by name and its Volume Group.
 
-To create and manage a volume, use the [`everpure_azure_volume` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume).
+To create and manage a volume, use the [`everpure_azure_volume` resource](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume).
 
 Soft-deleted volumes can't be looked up with this data source.
 

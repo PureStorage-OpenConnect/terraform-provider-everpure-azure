@@ -90,7 +90,11 @@ tidy:
 # Terraform provider local name (no underscores) AND the prefix that
 # tfplugindocs strips off resource type names to derive page filenames. Our
 # resources are `everpure_azure_*`, which is also what Terraform's implied
-# local name resolves to, so pages land at docs/resources/azure_<name>.md.
+# local name resolves to, so pages are generated as docs/resources/azure_<name>.md.
+# The `docs` target renames them to <name>.md afterwards: the registry builds
+# each sidebar label from the registry name (`everpure-azure`) plus the file
+# name, so without the rename every label would repeat `azure`
+# (`everpure-azure_azure_reservation`).
 TERRAFORM_VERSION := 1.16.1
 TFPLUGINDOCS_FLAGS := \
 	--provider-name everpure \
@@ -113,6 +117,15 @@ terraform-bin:
 
 docs:
 	go tool tfplugindocs generate $(TFPLUGINDOCS_FLAGS)
+	@for dir in resources data-sources ephemeral-resources actions list-resources; do \
+		[ -d "docs/$$dir" ] || continue; \
+		for f in docs/$$dir/azure_*.md; do \
+			[ -e "$$f" ] || continue; \
+			dest="docs/$$dir/$${f##*/azure_}"; \
+			if [ -e "$$dest" ]; then echo "ERROR: cannot rename $$f: $$dest already exists" >&2; exit 1; fi; \
+			mv "$$f" "$$dest" || exit 1; \
+		done; \
+	done
 
 # CI guard: docs/ must be regenerated in the same commit as the schema change
 # that affects it. Regenerates in place, then asks git whether anything moved —

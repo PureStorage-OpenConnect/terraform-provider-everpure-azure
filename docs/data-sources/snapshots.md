@@ -4,14 +4,14 @@ page_title: "everpure_azure_snapshots Data Source - Everpure Azure"
 subcategory: ""
 description: |-
   Lists the Volume Group Snapshots in a Volume Group, including those taken by the volume group's snapshot schedule. Soft-deleted (destroyed, not yet eradicated) snapshots are excluded by default; set include_destroyed = true to include them.
-  The elements do not include volume_snapshots, the snapshot of each member volume: the API does not return them when listing. To get them for one snapshot, look it up by name with the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot.
+  The elements do not include volume_snapshots, the snapshot of each member volume: the API does not return them when listing. To get them for one snapshot, look it up by name with the everpure_azure_snapshot data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot.
 ---
 
 # everpure_azure_snapshots (Data Source)
 
 Lists the Volume Group Snapshots in a Volume Group, including those taken by the volume group's snapshot schedule. Soft-deleted (destroyed, not yet eradicated) snapshots are excluded by default; set `include_destroyed = true` to include them.
 
-The elements do not include `volume_snapshots`, the snapshot of each member volume: the API does not return them when listing. To get them for one snapshot, look it up by name with the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot).
+The elements do not include `volume_snapshots`, the snapshot of each member volume: the API does not return them when listing. To get them for one snapshot, look it up by name with the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot).
 
 ## Example Usage
 

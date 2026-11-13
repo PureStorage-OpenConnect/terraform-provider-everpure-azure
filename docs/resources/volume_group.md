@@ -5,7 +5,7 @@ subcategory: ""
 description: |-
   Manages a Volume Group — a set of volumes sharing performance limits and a snapshot protection schedule, on a Storage Pool.
   ~> Destroying a volume group soft-deletes it and everything inside it. The backend disconnects any hosts and destroys the volume group's volumes along with it as one unit; all of it stays recoverable until eradication. Volumes Terraform destroyed before the group are soft-deleted separately and must each be recovered on their own. See Deletion policies https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies.
-  To read a volume group managed elsewhere without taking ownership of it, use the everpure_azure_volume_group data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group.
+  To read a volume group managed elsewhere without taking ownership of it, use the everpure_azure_volume_group data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group.
 ---
 
 # everpure_azure_volume_group (Resource)
@@ -14,7 +14,7 @@ Manages a Volume Group — a set of volumes sharing performance limits and a sna
 
 ~> **Destroying a volume group soft-deletes it and everything inside it.** The backend disconnects any hosts and destroys the volume group's volumes along with it as one unit; all of it stays recoverable until eradication. Volumes Terraform destroyed before the group are soft-deleted separately and must each be recovered on their own. See [Deletion policies](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).
 
-To read a volume group managed elsewhere without taking ownership of it, use the [`everpure_azure_volume_group` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume_group).
+To read a volume group managed elsewhere without taking ownership of it, use the [`everpure_azure_volume_group` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume_group).
 
 ## Example Usage
 

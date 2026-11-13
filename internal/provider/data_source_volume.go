@@ -93,7 +93,7 @@ func (d *VolumeDataSource) Schema(ctx context.Context, _ datasource.SchemaReques
 		MarkdownDescription: "Looks up an existing Volume by name and its Volume Group.\n\n" +
 			"To create and manage a volume, use the " +
 			"[`everpure_azure_volume` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume).\n\n" +
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume).\n\n" +
 			"Soft-deleted volumes can't be looked up with this data source.",
 		Attributes: attrs,
 		Blocks: map[string]schema.Block{

@@ -5,7 +5,7 @@ subcategory: ""
 description: |-
   Manages a Volume on a Volume Group.
   ~> Destroying the parent volume group soft-deletes this volume with it. The backend destroys every volume in a volume group as part of destroying the group itself; all of it stays recoverable until eradication. See Deletion policies https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies.
-  To read a volume managed elsewhere without taking ownership of it, use the everpure_azure_volume data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume.
+  To read a volume managed elsewhere without taking ownership of it, use the everpure_azure_volume data source https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume.
 ---
 
 # everpure_azure_volume (Resource)
@@ -14,7 +14,7 @@ Manages a Volume on a Volume Group.
 
 ~> **Destroying the parent volume group soft-deletes this volume with it.** The backend destroys every volume in a volume group as part of destroying the group itself; all of it stays recoverable until eradication. See [Deletion policies](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/guides/deletion-policies).
 
-To read a volume managed elsewhere without taking ownership of it, use the [`everpure_azure_volume` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_volume).
+To read a volume managed elsewhere without taking ownership of it, use the [`everpure_azure_volume` data source](https://registry.terraform.io/providers/PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/volume).
 
 ## Example Usage
 

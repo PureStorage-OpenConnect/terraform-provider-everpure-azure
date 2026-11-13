@@ -66,7 +66,7 @@ func (d *StoragePoolsDataSource) Schema(ctx context.Context, _ datasource.Schema
 			"`subscription_id` when `resource_group_name` is omitted.\n\n" +
 			"To look up a single, already-known pool, use the " +
 			"[`everpure_azure_storage_pool` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_storage_pool) instead.",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/storage_pool) instead.",
 		Attributes: map[string]schema.Attribute{
 			"resource_group_name": schema.StringAttribute{
 				Optional:            true,

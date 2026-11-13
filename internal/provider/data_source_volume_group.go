@@ -115,7 +115,7 @@ func (d *VolumeGroupDataSource) Schema(ctx context.Context, _ datasource.SchemaR
 		MarkdownDescription: "Looks up an existing Volume Group by name and its Storage Pool.\n\n" +
 			"To create and manage a volume group, use the " +
 			"[`everpure_azure_volume_group` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_volume_group).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/volume_group).",
 		Attributes: attrs,
 		Blocks: map[string]schema.Block{
 			"timeouts": dataSourceTimeoutsBlock(ctx, "the volume group", defaultVolumeGroupReadTimeout),

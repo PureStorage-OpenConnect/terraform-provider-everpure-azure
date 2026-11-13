@@ -57,7 +57,7 @@ func (l *SnapshotListResource) ListResourceConfigSchema(ctx context.Context, _ l
 			"Set the block's `limit` argument to raise the cap.\n\n" +
 			"`volume_snapshots` is null in list results. To see it, import the snapshot or read it with " +
 			"the [`everpure_azure_snapshot` data source](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/azure_snapshot).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/data-sources/snapshot).",
 		Attributes: map[string]schema.Attribute{
 			"volume_group_id": schema.StringAttribute{
 				Required:   true,

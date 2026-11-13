@@ -122,7 +122,7 @@ func (d *ReservationDataSource) Schema(ctx context.Context, _ datasource.SchemaR
 			"the reservation was created with are personal data and are not returned.\n\n" +
 			"To create and manage a reservation, use the " +
 			"[`everpure_azure_reservation` resource](https://registry.terraform.io/providers/" +
-			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/azure_reservation).",
+			"PureStorage-OpenConnect/everpure-azure/latest/docs/resources/reservation).",
 		Attributes: attrs,
 		Blocks: map[string]schema.Block{
 			"timeouts": dataSourceTimeoutsBlock(ctx, "the reservation", defaultReservationReadTimeout),
